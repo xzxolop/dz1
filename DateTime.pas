@@ -1,5 +1,7 @@
 ﻿
 begin
- var min:=readinteger('Введите кол-во секунд');
- print(60*min);
+ var year:= readinteger('Введите год');
+ if (year mod 4=0) and (year mod 100<>0)
+  or (year mod 100=0) and (year mod 400=0) then  write('Високосный')
+ else write('Низокосный');
 end.
