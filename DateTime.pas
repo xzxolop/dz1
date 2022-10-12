@@ -1,9 +1,17 @@
 ﻿
 begin
- var (d1, d2):=readinteger2('Введите номер двух дней');
- assert((d1 < 366) and (d2<366) and (d1>0) and (d2>0));
- if d1 > d2 then
-  print(d1);
- if d2 >d1 then
-   print(d2);
+ 
+ var year1:=readinteger('Введите номер года');
+ var a:integer;
+ if (year1 mod 4=0) and (year1 mod 100<>0)
+  or (year1 mod 100=0) and (year1 mod 400=0) then  a:= 366
+ else a:=365;
+ 
+ var year2:=readinteger('Введите номер года');
+ var b:integer;
+ if (year2 mod 4=0) and (year2 mod 100<>0)
+  or (year2 mod 100=0) and (year2 mod 400=0) then  a:= 366
+ else b:=365;
+ 
+ print(abs(year1*a-year2*b));
 end.
